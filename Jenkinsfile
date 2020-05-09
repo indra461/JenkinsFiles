@@ -1,4 +1,4 @@
-node
+node('slave1')
 {
 
 def mavenHome= tool name : 'maven3.6.3'
@@ -13,7 +13,7 @@ stage ('Build')
 sh "${mavenHome}/bin/mvn clean package"
 }
 
-
+/*
 stage ('SonarQubeReportEecution')
 {
 sh "${mavenHome}/bin/mvn clean sonar:sonar" 
@@ -37,6 +37,6 @@ emailext body: '''
 
 Indra''', subject: 'Build over', to: 'indra461.reddy@gmail.com'
 }
-
+*/
 
 }
